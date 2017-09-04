@@ -19,7 +19,11 @@ Indices containing fewer than 16 entities cannot be converted to a UCITS III com
 ***Methodology***
 
 The process of creating a UCITS III compliant index is essentially iterative. We try all valid combinations of weights within the UCITS guidelines and test each combination for UCITS III compliance.
-For large indices it’s likely that there will be several hundred if not thousands of combinations that will be UCITS III compliant. In order to choose which one becomes ***thee*** UCITS III index we compare it to the original index and determine its tracking error. The one with the lowest tracking error becomes our new UCITS III compliant index.
+For large indices it’s likely that there will be several hundred if not thousands of combinations that will be UCITS III compliant. In 
+order to choose which one becomes ***thee*** UCITS III index we compare it to the original index and determine its tracking error. 
+The one with the lowest tracking error becomes our new UCITS III compliant index. The tracking error is calculated by summing the square 
+of the differences between each index constituents weight in the UCITS index with it weight in the original index.
+
 In programming terms we logically divide our original index into 3 pivot points after sorting it by index weight - records 1 to N.
 
 CAP PIVOT - points to the lowest entity with weight = 9 %
